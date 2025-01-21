@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="
+     if(opponentResult==1) {
+      alert(draw);
+    }
+    else if(opponentResult==3) {
+      alert(win)
+    }
+    else {
+      alert(lose);
+    }
+    ">rock</button>
+  <button onclick="
+  if(opponentResult==2) {
+      alert(draw);
+    }
+    else if(opponentResult==1) {
+      alert(win)
+    }
+    else {
+      alert(lose);
+    }
+  ">paper</button>
+  <button onclick="
+   if(opponentResult==3) {
+      alert(draw);
+    }
+    else if(opponentResult==2) {
+      alert(win);
+    }
+    else {
+      alert(lose);
+    }
+  ">scissors</button>
+
+  <script>
+    const random=Math.random(); //Math.random() generates random numbers from 0 to 1.
+    const opponentResult=(parseInt(random*12345))%3+1;
+    console.log(random);
+    console.log(opponentResult);
+    const win='you win , congrats';
+    const lose='sorry , you lose';
+    const draw='it\'s a draw';
+  </script>
+</body>
+</html>

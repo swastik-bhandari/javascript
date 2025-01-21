@@ -1,0 +1,39 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NodeList vs HTMLCollection</title>
+</head>
+<body>
+  <div class="box">Box 1</div>
+  <div class="box">Box 2</div>
+  <div class="box">Box 3</div>
+  <div class="box">Box 4</div>
+  
+  <button id="add-box">Add Box</button>
+
+  <script>
+    // Select elements using querySelectorAll (returns NodeList)
+    const nodeList = document.querySelectorAll('.box');
+    console.log('NodeList before adding:', nodeList);
+
+    // Select elements using getElementsByClassName (returns HTMLCollection)
+    const htmlCollection = document.getElementsByClassName('box');
+    console.log('HTMLCollection before adding:', htmlCollection);
+
+    // Add a new div.box when the button is clicked
+    document.getElementById('add-box').addEventListener('click', () => {
+      const newBox = document.createElement('div');
+      newBox.classList.add('box');
+      newBox.textContent = `Box ${htmlCollection.length + 1}`;
+      document.body.appendChild(newBox);
+
+      // Check the size of both collections after adding a new box
+      console.log('NodeList after adding:', nodeList); // Static: Still shows the old count
+      console.log('HTMLCollection after adding:', htmlCollection); // Live: Updates automatically
+    });
+  </script>
+</body>
+</html> -->
+

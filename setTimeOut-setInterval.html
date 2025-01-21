@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="parent">
+    <div class="child">
+      i am child of first parent
+    </div>
+  </div>
+  <div class="parent">
+    <div class="child">
+      i am child of second parent 
+    </div>
+  </div>
+  <button class = 'stop-clock'>stop</button>
+  <script>
+    let time=0;
+    const timerId = setInterval(()=> {
+      console.log(time);
+      time=(time+1)%10;
+    } , 1000 ,0);
+    console.log();
+    const button= document.querySelector('.stop-clock');
+    document.addEventListener('click',(e)=> {
+      if(e.target.className ===button.className) {
+        clearInterval(2);
+      }
+    })
+    // setTimeout(function , time in milliseconds , arguments );
+    console.log(button.classList);
+  </script>
+</body>
+</html>

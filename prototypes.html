@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <script>
+    const obj = {
+      name:'swastik',
+      class:'bachlors 3rd year',
+      obj1  :{
+        name :'hii',
+        class:'k xa ni'
+      }
+    }
+    console.log(obj.__proto__===Object.prototype); //true
+    console.log(obj.obj1.__proto__===Object.prototype); //true
+    console.log(typeof Object);
+  </script> -->
+
+  <!-- <script>
+    function Person( name , grade) {
+      this.name=name;
+      this.grade=grade;
+      return name + grade;
+    }
+    console.log(Person(3,4));
+    const obj = new Object();
+    console.log(Function.__proto__===Function.prototype);
+    console.log(Object.__proto__===Function.prototype);
+    console.log(Function.prototype.__proto__===Object.prototype);
+  </script> -->
+
+
+  <!-- <script>
+    function func () {
+      console.log('hello world');
+    }
+    func.call();
+    func();
+    console.log(func.__proto__===Function.prototype) ;
+    // Function.prototype has a method call().
+  </script> -->
+
+  <!-- <script>
+    function lala() {
+      name='swastik';
+
+    }
+    // obj =  new lala();
+    // console.log(obj);
+    // console.log(lala);
+    console.log(lala.name);
+    ob1 = {
+      name:'swastik'
+    }
+    console.log(ob1);
+  </script> -->
+  <!-- <script>
+    function Func() {
+      name='hero'; // name ='papa'
+      // this.don='donkey'; // don='donkey'
+      console.log(this);
+    }
+    // new Func();
+    const obj = new Func();
+    console.log(obj);
+    
+    // console.log(ck());
+
+  </script> -->
+  <!-- <script>
+    const obj = {
+      name:'hello',
+      clas:'16',
+      display : function () {
+        console.log(this.name);
+        console.log(this);
+      }
+    }
+    console.log(obj.display.prototype);
+  </script> -->
+  <script>
+    function myfunction() {
+      this.name='hello';
+      this.age='25';
+      return 5;
+    }
+    obj=new myfunction();
+    console.log(obj);
+  </script>
+</body>
+</html>

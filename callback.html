@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <script>
+    const userLeft=true;
+    const userWatchingMeme=true;
+   function watchTutorialCallBack(callback ,errorCallBack){
+    if(userLeft) {
+      errorCallBack( {
+        name : 'userLeft',
+        message: 'it\'sounds bad'
+      });
+    }
+    else if(userWatchingMeme) {
+      errorCallBack({
+        name :'user is watching meme',
+        message:'user will return after that meme'
+      })
+    }
+    else {
+      callback({
+        name:'user is watching',
+        message:'tell user\'s to subscribe the channel'
+      })
+    }
+    }
+    watchTutorialCallBack((message)=> {
+      console.log('success:'+message.message);
+    } , (error)=>{
+      console.log('failed:'+error.message);
+    });
+  </script> -->
+  <!-- <script>
+    const p= new Promise((resolve,reject)=>{
+      let sum =2;
+      if(sum===2) {
+        resolve('success');
+      }
+      else {
+        reject('failure');
+      }
+    });
+    // p.then((message)=>{
+    //   console.log(message);
+    // }).catch((message)=>{
+    //   console.log(message);
+    // });
+    console.log('hello world');
+  </script> -->
+
+  <!-- resolving callback hell problem using promises  -->
+  <script>
+    function operation1() {
+      return new Promise((resolve, reject)=> {
+        resolve('success1');
+      });
+    }
+    function operation2() {
+      return new Promise((resolve,reject)=> {
+        resolve('success2');
+      })
+    }
+    function operation3() {
+      return new Promise((resolve, reject)=>{
+      resolve('success3');
+    });
+  }
+    // operation1().then((message1)=> {
+    //   operation2().then((message2)=> {
+    //     operation3().then((message3)=> {
+    //       console.log(message1+message2+message3);
+    //     })
+    //   })
+    // })
+    operation1().then(msg1=> {
+      console.log(msg1);
+      return operation2();
+    }).then(msg2=> {
+      console.log(msg2);
+      return operation3();
+    }).then(msg3=> {
+      console.log(msg3);
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const name = {
+      firstname : 'swastik',
+      lastname :'bhandari',
+    }
+    const printFullName =function (hometown , mamaghar) {
+      console.log(this.firstname+ this.lastname + hometown + mamaghar);
+    }
+    let name2 = {
+      firstname : 'rajan',
+      lastname :'dahal',
+    }
+
+    // function borrowing 
+    printFullName.call(name2 , ' kanchanpur' , 'dang');
+    printFullName.apply(name,['butwal' , ' sindhuli']);
+    const biodata= printFullName.bind(name,'kathmandu' , 'newyork');
+    biodata();
+  </script>
+</body>
+</html>

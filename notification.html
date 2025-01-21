@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notification Test</title>
+</head>
+<body>
+  <button class="notifyBtn">Show Notification</button>
+
+  <script>
+    button = document.querySelector('.notifyBtn');
+    console.log(button);
+    button.addEventListener('click' , ()=> {
+      Notification.requestPermission().then(perms=> {
+      console.log(perms);
+    });
+    const notification = new Notification ('hii swastik' , {
+      body :'how are you , my boy ',
+    });
+    console.log(notification);
+    })
+    document.addEventListener('visibilitychange', ()=> {
+      if(document.visibilityState==='hidden') {
+      notification2 = new Notification('Hellooo swastik' , {
+        body: 'come back man , we need you ',
+        tag : 'visibility'
+      })
+    } else {
+      notification2.close();
+    }
+    })
+  </script>
+</body>
+</html>

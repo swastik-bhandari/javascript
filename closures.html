@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // console.log("hello");
+    function outerFunc() {
+      let outerVariable=" i am a variable declared outside";
+      function innerFunc() {  // inner function contains [[Environment]](reference) to outer function. innerFunc() forms a closure .
+        console.log(outerVariable);
+      }
+      return innerFunc;
+    }
+    const c=outerFunc(); // c contains reference to innerFunc . so until it contains the reference to innerFunc . lexical environment of outerfunction will not get garbase collected . 
+    // for a function's lexical environment to get garbage collected , there should be no any reference to it . if innerFunc contains the reference to outerFunc . and c contains the reference to innerFunc . to make lexical environment of innerfuction to get garbage collected . we can set c to null , so there will be no reference to innerFunc . and innerFunc's lexical environment can be garbage collected . as the lexical environment of innerFunc gets garbase collected, [[Environment]](reference to lexical environment to outerFunc) gets distroyed and there is no reference to outerFunc . so outerFunc also gets garbage collected .
+    c();
+    console.log(typeof c);
+  </script>
+</body>
+</html>

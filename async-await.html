@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function makeRequest(location) {
+      return new Promise((resolve , reject)=> {
+        console.log('hello k xa');
+        if(location ==='Google') {
+          resolve('we are in the right place');
+        }
+        else {
+          reject('we are in wrong destination');
+        }
+      });
+    }
+    function processRequest(response) {
+      const p = new Promise((resolve , reject)=> {
+        if(response===true) {
+          resolve('we get the response from the google');
+        }
+        else {
+          reject(' sorry ! , failed to get the response');
+        }
+      })
+      return p;
+    }
+    // makeRequest('Google').then((message)=> {
+    //   console.log(message);
+    //   return processRequest(true);
+    // }).then((msg)=> {
+    //   console.log(msg);
+    // })
+     async function searchLocation(){
+      try {
+        console.log('hello');
+      const a =await makeRequest();
+      console.log(a);
+      }
+      catch(error){
+        console.log(error);
+      }
+      console.log('hello santi');
+    }
+    x = searchLocation();
+    console.log(x);
+  </script>
+  <!-- <script>
+    let hellnaw = () => {
+    return new Promise( (resolve, reject) => {
+     resolve(console.log('hello'));
+    });
+  };
+
+  async function awhellnaw () {
+    console.log("a");
+    console.log("b");
+    await hellnaw ();
+    console.log("c");
+    console.log("d");
+  }
+  awhellnaw()
+  console.log("e");
+  console.log("f");
+  </script> -->
+</body>
+</html>
+
+<!-- Execution Flow with await
+await makeRequest() is encountered:
+
+The makeRequest() function is called immediately.
+If makeRequest() is asynchronous, it begins executing its synchronous part first.
+makeRequest() returns a Promise:
+
+When makeRequest() encounters an await or completes, it returns a Promise.
+At this point:
+The execution context of makeRequest() pops off the call stack.
+The Promise is pending.
+The async function (searchLocation) pauses:
+
+The async function containing await makeRequest() pauses at the await point.
+The execution context of searchLocation is removed from the call stack, but its state is saved in memory (so it can resume later).
+Global execution context resumes:
+
+With no more tasks in the call stack, the global execution context continues running any remaining synchronous code.
+Promise resolution/rejection:
+
+When the Promise returned by makeRequest() resolves or rejects:
+Its callback (the continuation of the async function after await) is added to the microtask queue.
+Event loop handles the microtask:
+
+After the current stack of synchronous tasks is completed and before handling tasks from the macrotask queue (like setTimeout), the event loop processes microtasks.
+The continuation of the async function is added back to the call stack from the microtask queue.
+The async function resumes:
+
+The saved state of the async function (searchLocation) is restored.
+Execution continues immediately after the await statement, with the resolved value (or rejection handled if a try...catch block is used). -->
+
+<!-- Behavior of await in a try-catch Block
+
+When the Promise resolves:
+
+ The code continues executing after the await statement 
+ 
+ When the Promise rejects:
+
+The rejection is caught by the catch block.
+Execution immediately jumps to the catch block, skipping any code after the await statement in the try block.
+-->
+
+<!--
+You're absolutely correct: an async function in JavaScript implicitly returns a Promise. Let's break down how this works:
+
+Implicit Promise creation:
+
+Even if you don't explicitly create a Promise using new Promise(), JavaScript automatically wraps the return value of an async function in a Promise.
+
+If the async function returns a value directly (not a Promise): The returned value is wrapped in a resolved Promise. -->

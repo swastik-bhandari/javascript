@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <div class="box1">
+    k xa hal khabar
+    <div>
+      hello
+    </div>
+  </div>
+  <div class="box1">
+    i love you 
+  </div>
+  <script>
+    const body = document.body ;
+    const box = document.getElementsByClassName('box1');
+    if(box) {
+      console.log(box[0].innerText);
+      console.log(box[1].innerText);
+    }
+  </script> -->
+
+  <!-- <div class="box">
+    hello
+    <div class="box">
+      hii
+    </div>
+    <div class="box">
+      hhhhhiiii
+    </div>
+  </div>
+  <div class="box">
+    k xa khabar
+  </div> -->
+
+  <!-- <script>
+    const box = document.getElementById('box1');
+    const box3=document.createElement('div');
+    box3.innerText='hello my name is swastik';
+    // box8 = document.body.appendChild(box3);  //appendChild returns the node object but append doesn't return anything .
+    // console.log(box8);
+    document.append(box3);
+  </script>  -->
+
+  <!-- inserting elements after deletion (using insertAdjectElement('  ' , )) -->
+  <!-- <script>
+    // let body =document.body;
+    let container = document.getElementById('container');
+    let box = document.getElementById('box');
+    container.remove();  
+    box.insertAdjacentElement('afterend' ,
+    container);
+  </script> -->
+
+    <!-- inserting elements after deletion  (using insertBefore())-->
+     <!-- <div id="container">hello</div>
+     <div id="box">hii</div>
+  <script>
+    let body =document.body;
+    let container = document.getElementById('container');
+    let box = document.getElementById('box');
+    container.remove();
+    body.insertBefore(container , box);
+    console.log(body);
+   // body.insertBefore(container , null); // default
+  </script> -->
+  
+  <!-- selecting the element  -->
+  <script>
+    // let div = document.querySelector('div:nth-of-type(2)');
+
+    // let div= document.querySelectorAll('div');
+    // div[2].style='color:red';
+
+    // let div = document.getElementsByTagName('div');
+    // div[1].style='color:blue'; 0th-index:first element , 1st-index:second element and so on .
+  </script>
+
+<!-- what happens when element is removed from DOM -->
+  <!-- <script>
+    const box = document.querySelector('div');
+    box.remove('div'); // when you remove using method remove() , it removes the element from the DOM  but it is not garbage collected if there are still references to it in your code.
+    // Garbage collection in JavaScript happens when there are no more references to an object. 
+  </script> -->
+
+
+  <!-- <script>
+    let divinside;
+    const div = document.querySelector('div');
+    //  divinside = div.children[0];
+     div.remove();
+    // console.log(divinside);
+    // console.log(div[0]);
+    // console.log(div[1]);
+    // console.log(div[2]);
+  </script> -->
+
+  <!-- <script>
+   let a = document.querySelectorAll('div');
+   let b = document.getElementsByClassName('box');
+   console.log(a);
+   console.log(b);
+  </script> -->
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .child{
+      width:100px;
+      height: 100px;
+      background-color: gray;
+      margin:20px;
+    }
+    .parent {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      height: 300px;
+      background-color: rgb(57, 114, 57);
+    }
+    .grand-parent {
+      display:flex;
+      padding:100px;
+      background-color: rgb(219, 219, 105);
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="grand-parent">
+    <div class="parent">
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
+    <div class="parent">
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
+  </div>
+  <script>
+    const firstChild = document.querySelector('.child');
+    // selecting parent element 
+    // const firstParent =firstChild.parentElement;
+    // firstParent.style='background-color:red';
+
+    //selecting ancistors
+    // const nearestAncestor = firstChild.closest('.grand-parent');
+    // nearestAncestor.style='background-color:red';
+  </script>
+</body>
+</html>

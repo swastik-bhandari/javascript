@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <script>
+    const product = {
+      name : 'apple',
+      price : `${35}$`,
+      sell : 25
+    }
+    // in JavaScript , the data members are called properties and member functions are called methods.
+    // console.log(product.price);
+    // console.log(product);
+    product.origin='humla';
+    console.log(product); // we can add properties to object .
+    delete product.sell; // we can delete properties from object .
+    console.log(product); 
+  </script> -->
+  <!-- <script>
+    const product = {
+      ['name'] :'shirt' // name:'shirt'
+    }
+  </script> -->
+
+  <!--  undefined vs null , passing it into function -->
+  <!-- <script>
+    function func(x='hello'){
+    console.log(x);
+    }
+    console.log(func.prototype);
+    func(undefined);
+    func(null);
+  </script> -->
+
+
+  <!-- Auto-boxing in javascript , Auto-boxing occurs in String , Boolean , Number , Symbol -->
+   <!-- <script>
+    console.log('hello'.length);
+   </script> -->
+
+   <!-- comparing objects in js -->
+    <!-- <script>
+      const obj1 = {
+        name:'swastik'
+      }
+      const obj2 = {
+        name:'swastik'
+      }
+      console.log(obj1)
+    </script> -->
+
+    <!-- destructuring -->
+    <!-- <script>
+      // const obj = {
+      //   'first-name':'swastik',
+      //   'last-name':'bhandari'
+      // }
+      // let {'first-name'} = obj; // error 
+      // console.log(first-name);
+      // if hyphens or special characters , except _ $ are used in name of properties inside object . you cannot desturcture it . but still you can access using backets. 
+      // let first-name=obj['first-name'];
+
+      const obj = {
+        firstName :'swastik',
+        lastName :'bhandari'
+      }
+      // let {lastName} =obj; // note that , the name of variable inside brackets should be of same name in properties and methods inside object . 
+      
+      // if you want to use different name, use can use colons.
+      let {lastName:surname} = obj;
+      console.log(surname);
+
+      // you can also provide default values if property does not exist .
+      let {firstName , middleName='prasad' , lastName} = obj;
+      console.log(middleName);
+
+    </script> -->
+
+    <!-- shorthands in objects -->
+     <script>
+      let name='swastik';
+      let grade='A';
+      let age=19;
+
+      const obj = {
+        name , 
+        grade , 
+        age,
+        addString() { // addString :function() {...} is traditional way. addString() {...} is shorthand and is preferred in modern js code .
+          console.log(`name :${this.name}  grade :${this.grade}    age :${this.age}`);
+        }
+      }
+      console.log(obj.name); // swastik
+      console.log(obj.grade); // A
+      console.log(obj.age);  // 19
+      obj.addString();
+     </script>
+</body>
+</html>

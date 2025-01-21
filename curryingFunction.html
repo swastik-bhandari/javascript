@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    ////////// curring function using bind()
+    function sum (a , b) {
+      console.log(a+b);
+    }
+    sum5=sum.bind(sum,5);
+    console.log(sum5);
+    sum5(4);
+    // sum5=sum.bind(sum,5 , 7);
+    // console.log(sum5);
+    // sum5(4); // 4 does not overrides 7
+
+    /////////// curring function using closure
+    function product(a){
+      return (b) => {
+        console.log(a*b);
+      }
+    }
+    const product5 = product(5);
+    console.log(product5);
+    product5(10);
+
+    // function product(a , b){
+    //   return (b) => {
+    //     console.log(a*b);
+    //   }
+    // }
+    // const product5 = product(5 , 6);
+    // console.log(product5);
+    // product5(10); // 10 overrides 6 . // 50
+    
+  </script>
+</body>
+</html>
