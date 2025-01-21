@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--  it uses an ES6 class (class name). In JavaScript, the body of a class is always executed in strict mode, even if you do not explicitly enable it with "use strict". -->
+  <!-- <script>
+    class name {
+      constructor () {
+        this.num1 =5;
+        this.num2 =6;
+      }
+      sum() {
+      // console.log("hello");
+      console.log(this.num1+this.num2);
+      }
+    }
+    const b = new name();
+    console.log(name);
+    console.log(name.__proto__===Function.prototype); //true
+    console.log(name.prototype);
+    console.log(b.__proto__ === name.prototype); //true
+    b.sum();
+    name.prototype.sum(); // it is like calling sum() function directly . as 'this' represents Window if is not bounded by object. so ,  this.a and this.b has global scope . as it is running in strict mode . so it is undefined . 
+    name.prototype.sum.call(b);
+
+  </script> -->
+
+  <!--     ////////  extends , super  -->
+     <script>
+      class name {
+        constructor(nm) {
+          this.firstName = nm;
+        }
+        sum() {
+          console.log(this.firstName);
+        }
+      }
+      class eduction extends name{
+        constructor(nm , edu) {
+          super(nm);
+          this.Quilification = edu;
+        }
+        func() {
+          console.log(this.Quilification);
+        }
+      }
+      const person = new eduction("swastik" , "bachlors in CE");
+      person.sum();
+      person.func();
+
+     </script>
+</body>
+</html>

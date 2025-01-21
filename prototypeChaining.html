@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    parent = new Function();
+    parent.name ='swastik';
+    parent.age='18';
+    child = new Object();
+    child.prototype = Object.create(parent.prototype);
+    // Object.create() method creates an object whose __proto__ points to parent.prototype and that newly created object is assigned to child.prototype;
+    console.log(child.prototype);
+    child.prototype.constructor = child;
+    console.log(child.prototype.__proto__.__proto__===Object.prototype);
+  </script>
+
+  <script>
+    parent = new Function();
+    parent.name ='swastik';
+    parent.age =18;
+    child = new Object;
+    parent.prototype.name="hari";
+    child.prototype = new Object;
+    child.prototype.__proto__ = parent.prototype;
+    child.prototype.constructor = child;
+    console.log(child.prototype.name);
+    
+  </script>
+</body>
+</html>
